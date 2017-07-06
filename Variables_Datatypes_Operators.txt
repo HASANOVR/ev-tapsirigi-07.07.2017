@@ -1,0 +1,118 @@
+Variable
+
+Variable programlamada istifade oluna bilecek her hansi bir deyiskeni xarakterize eden bir addir.
+variable-a verilecek ad ise ordaki melumatin ne ile elaqedar oldugunu xaraterize etmelidi ki gelecekde o deyiskenin ne oldugunu daha aydin ve rahat sekilde basa duse bilesen. 
+PS: Kod setri duz olmaya biler sadece yaziram
+
+meselen: deyekki bizim bir deyisenimiz var hansi ki biz orda avtomobil firmasinin qeyd edeceyik.bu deyisene "A" deyibde avtomobil adini qeyd ede bilerik sadece gelecekde bu kimi deyisenlerimiz cox olacagindan "A" deyiseninni ne oldugunu axtarib tapana kimi mueyyen vaxt itkisi olaca onun ucun biz deyisenimizin adini qeyd ederken daha spesifik bir sekilde qeyd edeceyik:
+variable Avto_001=Nissan
+
+Bele olan halda artiq biz deyisenimizi gorerken onun avtomobil oldugunu bileceyik ve bu bizim isimizi cox daha rahat bir sekilde gormeyimize yarayacaq.
+
+Bes niye biz variabledan istifade etmeliyik? cunki bizim variable-la verdyimiz deyer (Bu nemeric,boolean veya string ola biler) deyise biler amma o variable ile etdiyimiz emeliyyatlar deyisilmez olaraq qalacaq.
+
+Meselen: Deyekki bizim bir Variablemiz var valyuta_kursu . ve deyekki biz bir valyuta deyisme menteqesiyik ve bele bir siyasetimiz var dollarin kursu necedise onun uzerine 50 qepik gelib dollari satisa cixaririq. eger biz bunun ucun bir program yazsaq ve variabledan istifade etmesek onda bele bir eziyyet alinacaq deyekki bu gun dollarin kursu 1.70 dir ve biz butun hesablamalarimizi ona uygun sekilde kodlarda yazdiq ve sabah dollarin kursu deyisdi oldu 1.80 biz bu halda mecburuq butun kod setirlerimizde dollarin kursu 1.70 olan yerleri evezleyim 1.80 yazaq bu ise kifayet qeder uzun ve semeresiz olar. fikirlessek ki boyuk algoritmalar yazilib yeni sadece 50 qepik uzerine gelmek deyil :) bu halda isin icerisinden cixilmaz bir veziyet olardi. bunun ucun variabledan istifade edrik ve butun hesablamalar ve algoritmalar hemin variablelara yazilir artiq siz variable-in deyirini deyissenizde yazdiginiz hesablamalari tekrar deyismeyinize ehtiyac yoxdur onlar avtomatik yeni deyerle hesablanib gosterilecek.
+
+
+Data Types
+
+Data Types-a bunlara aid olanlar string , boolean value ve numeric values-dir. Numeric valuelar ozude 2 yere ayrilir 
+tam ededler ve kesirli ededler . 
+
+Numeric valuelar dedikde sadece reqemlerle gostermek istediyiniz melumatlar nezerde tutulur. buna misal olaraq yas ,temperatur yeni bele deyekde reqemlerle gosterile bilen istenilen deyerler.
+Meselen:   variable Evro_kurs=2  (tam eded) 
+	variable dollar_kurs=1.70 (Kesirli eded)
+
+Numeric valuelar 2 hisseye bolunur dedik tam ver kesirli sayilar. indi ise onlarin izahini verek:
+	Tam Sayilar: menfi, 0 ve butun musbet tam sayilardir bunlarin istifadesi zamani biz "byte" , "sbyte", "short" ,"ushort","long" ve s. kimi komutlar istifade olunur. bunlarin sadece  istifade olunacaq sayilari ne qeder olacagini mueyyen edir. Sual yaranir niye sadece reqemleri ifade etmek ucun bu qeder cesidli komutlardan istifade olunur? Sebeb yazilan programlarin lazimsiz olaraq elave  resurs istifade etmesinin qarsisiniz almaqdir. bu komutlarin istifadesi zamani ne qeder sayi istifade ede bileceyimizi qisa sekilde gosterib numunemize kececeyik.
+
+PS: reqemler copy pastedir :)
+
+byte: 0dan 255 de daxil olmaqla (256 eded) 8 bite yer tutur
+sbyte: -128 den 0 da daxildir 127-e qeder (256 eded) 8 bite yer tutur
+short: -32,768 den 32,767 0da daxildir (65536 eded ) 16  bite yer tutur
+ushort: 0 dan 65535 daxil olmaqla (65536 eded)  16 bite yer tutur ve s.
+
+meselen: deyekki biz bir variablemiz var orda biz ayin gunlerini qeyd edirik nezere alsaqki ayin maksimum 31 gunu olur biz burda tebii ki "ulong" , "short" , "sbyte" ve s kimi data typelari istifade ede bilerik amma istifade etmemeliyik cunki ayin gunleri menfi (-) say ola bilmez ona gorede bu kimi menfi say qruplarini ehate eden data typelari istifade etmemeliyik.  biz "ushort" , "long" ve s. kimi  data typelarida istifade ede bilerik amma  yene nezere alsaqqi bizim deyisenimiz maksimum 31 olacaq ona gore en uygun variant "byte" data type-i istifade etmeyimizdir. sebebi ise resurslarimizi daha optimal istifade etmekdir.
+
+	Kesirli sayilar: eyni tam sayilar kimi dir sadece olaraq sayinin tam hissesi ucun ayiri,kesir hissesi ucun ise 
+ayri resurs istifade edir.
+Meselen: a,b (a-da bir reqemdir, b-de) "a" ucun "long" data type ehate etdiyi birsayini istifede edir "b" ucunde "long" data type-ni  istifade edir. Yeni variable longlong= 2354,9682 .
+
+longlong data type-i 64 bit dir long 32 bitdir 2 eded long 64 bit
+
+
+Boolen value
+
+Boolen value dedikde ne basa dusmeliyik bu value 8 bite dir ve sadece "True" (yeni Duz) ve "False" (yeni Sehv) cavablarini bize veren bir data type-dir.
+
+Meselen: deyekki biz bir anket hazirlamisiq saytimizda ve ya yazdigimiz programda ordaki anketlerde bele suallar var:
+1.bizim yeni programimizi beyendinizmi ? T    veya  F  (Bu herifleri qalicka veya cedvel formasinda hazirlayib yuxari hissesinde beli ve xeyr kimi bolmelere ayiraraq noqte qoymaq veya qalicka qoymaq kimi hell etmek olar)
+2.Daha evvel bizim yazdigimiz programlardan istifade etmisinizmi? ve s.
+
+Kimi cavabi True (Duz) veya False (Zehv) olan suallarda ve ya diger hallarda istifade ede bilersiniz. sebeb ise yene elave resurs istifade etmemeyinizdir.
+
+String values
+
+String values dedik de ise biz herfler,karekterler ($%^&* ve s.) herflerle birlikde istifade olunan reqemler (meselen: Baki2017) nezerde tutulur. "Dirnaq" icerisinde yazilir ("") stringiniz. data type ise "char"-dir. 16 byte her bir karaktere gore resurs istifade edir Meselen: Baku2017 bu o demekdir ki 8*16= 128 byte . hec bir hedd yoxdur.
+
+
+Operatorlar
+
+Programlama dilinde Emeliyyatlar dediyimiz 3 nov emeliyatlar var. bunlar:
+1.Arithmetic (Riyazi ) emeliyatlar
+2.Relational (Muqayise) emeliyatlar
+3.Logical (Mentiqi) emeliyatlar
+
+Riyazi emeliyatlar 
+
+Riyazi emeliyyatlar dedikde toplama,cixarma,vurma,bolme ve mode (sirasi ile +,-,*,/,%) nezerde tutulur.eyni riyaziyyatda oldugu kimi butun emeliyyatlar eynidir. Meselen : 
+
+variable a=10
+variable b=3
+biz eger desekki a+b=10+3=13 eyni sekilde a-b=10-3=7 , a*b=10*3=30 , a/b=10/3=3.33..
+
+Gelek Mode emeliyyatina bu emeliyyat bize variablelarimizi birini digerine bolub bize qalan qaliqi gosterir. Yuxarida gosterilen variable-lari istifade ederek meselen:
+
+a%b=10%3= 10 icerisinde 3 defe 3 tapmaq olur yeni 9 10dan 9u cixarsaq bize qaliq olaraq 1 verir yeni a%b=1
+
+Eger biz mode alarken kicik bir sayini boyuk bir sayiya mod alarsaq o bize bir basa kicik sayinin ozunu verecek yeni yuxardaki variablelari istifade ederek meselen :
+b%a= yazarsaq 3u 10a bolerken tam sayi ve qaliq cixmir ona gorede bir basa 3 alinir yeni b%a=3
+
+
+Muqayise emeliyyatlari 
+
+Muqayise emeliyyatlari dedikde eynidirmi,eynideyilmi,boyukdurmu,kicikdirmi,boyuk beraberdimi , kicik beraberdimi (sirasi ile ==, !=, >, <, >= ,<=) nezerde tutulur. bu emeliyatlar zamani bize cavablar True (Duz) ve False (Sehv) olaraq cixir meselen :
+
+
+variable a=5
+variable b=3 
+variable c=3
+variable d=5
+
+Eger biz yazsaq ki 
+
+1) a==b bunun cavab False-dur cunki 5 3le eyni deyil
+2) a==d bunun cavabi True-dir cunki 5 5 le eynidir
+3) b!=c bunun cavabi False-dur cunki 3 3 le eynidir biz ise "!=" bu emeliyatla deyirik ki 3 "!=" (eyni deyildir) 3 le bu sehvdir
+4) a!=b bunun cavabi Truedur cunki 5 3le eyni deyildir.
+5) a>b bunun cavabi Truedur 5 3den boyukdur
+6) b>a bunun cavabi False dur 3 5den boyuk deyil
+7) b<a  True
+8) a<b False
+9) b>=c True cunki biz bu  ">=" emeliyatla deyirikki 3 boyuk beraberdir 3-e sertlerden biri duz oldugu ucun duzdur 3 3-e beraberdir
+10)c<=d True cunki bir bu "<=" emeliyatla deyirikki 3 kicik beraberdir 5-e sertlerden biri duz oldugu ucun duzdur 3 5-den kicikdir.
+
+Mentiqi emeliyyatlar.
+
+
+Mentiqi emeliyyatlari dedikde ve,veya,deyildir (Not) (sirasi ile &&, ||, ! )nezerde tutulur. Bu emeliyyatlar zamani bize cavablar True veya False olaraq cixir. 
+	1. ve (&&) emeliyatinda her iki teref True olmalidirki cavabimiz True olsun eks halda emeliyatin cavabi False olacaq meselen:  T&&T=T , T&&F=F , F&&T=F , F&&F=F
+	2. ve ya (||) emeliyatinda her iki terefden ve ya iki terefden biri True olarsa cavab True olaca her iki teref False olarsa cavabimiz False olacaq meselen: T||T=T , T||F=T , F||T=T , F||F=F
+	3.deyildir (!) bu emeliyyat bizim True veya False olan oponetlerimizi tersine cevirir meselen: normalda T&&T=T amma eger biz T larin birinin qarsisina deyildir (!) elave edersek bele olacaq !(T)&&T=birinci T-nin qarsisinda deyildir oldugu ucun onu tersine cevirecek yeni F&&T=F olacaq.
+
+
+
+
+         
+
